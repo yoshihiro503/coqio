@@ -1,0 +1,10 @@
+#-R . CoqIO
+-I ../../src
+Hello.v
+Extr.v
+OCAMLC = "ocamlc -c"
+-custom "$(OCAMLC) coq.mli" "coq.ml" coq.cmi
+-custom "$(OCAMLC) coq.ml" "coq.cmi" coq.cmo
+-custom "ocamlc -o run coq.cmo" "coq.cmo" run
+
+
